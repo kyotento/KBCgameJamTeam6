@@ -484,7 +484,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53696984d6f423b4dacf30549a4fd8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
+  rotSpeed: 5
+  speed: 0.1
 --- !u!1 &1780708784 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100004, guid: 77ffcebf31620234696176b49645d319,
@@ -502,7 +503,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 0}
 --- !u!1001 &1836021127

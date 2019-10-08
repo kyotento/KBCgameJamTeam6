@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    private GameObject mainCamera;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        mainCamera = Camera.main.gameObject;
     }
+    public float rotSpeed = 5;
 
     public float speed = 5;
 
@@ -57,9 +60,11 @@ public class Player : MonoBehaviour
         float rx = Input.GetAxis("Horizontal2");
         float rz = Input.GetAxis("Vertical2");
 
-    
-       
+        move.x = lx * speed;
+        move.z = lz * speed;
 
+        Vector3 angle = new Vector3(-rz  * rotSpeed, rx * rotSpeed,0);
+        mainCamera.transform.Rotate(angle);
         charaCon.Move(move);
 
     }
