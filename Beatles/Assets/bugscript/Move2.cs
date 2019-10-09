@@ -39,10 +39,6 @@ public class Move2 : MonoBehaviour
         diff = target[targetnum] - this.gameObject.transform.position;
        
         diff.Normalize();
-<<<<<<< HEAD
-        charaCon.Move(diff/4.0f);
-=======
         charaCon.Move(diff / 50.0f);
->>>>>>> f5fed66015a4d7a080a0f93b4d863b46e59aeceb
     }
 }
