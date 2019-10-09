@@ -8,7 +8,7 @@ public class DrawLine : MonoBehaviour
     public GameObject preBullet;
     private GameObject objLineRenderer;
     private GameObject objBullet;
-    private LineRenderer lineRenderer;
+    private TrailRenderer lineRenderer;
     private int count = 0;
     public float mass = 1f, drag = 1f, x = 0f, y = -3f, z = 0f, initVel = 10f, angle = 0f, step = 0.05f, time = 0;
     private float gravity = 9.80665f;
@@ -16,9 +16,12 @@ public class DrawLine : MonoBehaviour
 
     public Vector3 velo;
  
+    [SerializeField] float drawSec = 5;
+
 	// Use this for initialization
 	void Start () {
         angle = 30f * Mathf.Deg2Rad;
+
         vel = new Vector3(initVel * Mathf.Cos(angle), initVel * Mathf.Sin(angle), 0);
 
         //test
@@ -26,9 +29,11 @@ public class DrawLine : MonoBehaviour
 
         objLineRenderer = Instantiate(preLineRenderer, gameObject.transform);
         objLineRenderer.transform.localPosition = Vector3.zero;
-        lineRenderer = objLineRenderer.GetComponent<LineRenderer>();
+        lineRenderer = objLineRenderer.GetComponent<TrailRenderer>();
  
         Time.timeScale = 0.2f;        
+        
+        lineRenderer.SetPosition(0, Vector3.zero);
 
         objBullet = Instantiate(preBullet,gameObject.transform);            
         objBullet.GetComponent<Rigidbody>().useGravity = false;
@@ -36,18 +41,21 @@ public class DrawLine : MonoBehaviour
  
     void DisZeroDrag()
     {
-        //if (y >= 0)
-        {
+        time = step;
+        //if (y >= 0)                
+        for(int i = 0 ; i < 50; i++)
+        {        
+            if(lineRenderer != null){
             x = vel.x * time;
             z = vel.z * time;
             y = vel.y * time - 0.5f * gravity * (time * time + time * Time.fixedDeltaTime);
-            lineRenderer.positionCount = count + 1;
+            //lineRenderer.positionCount = count + 1;
             lineRenderer.SetPosition(count, new Vector3(x + this.transform.position.x, y + this.transform.position.y, z + transform.position.z));
             count++;
             time += step;
-
-            
+            }
         }
+        
     }
  
  
@@ -56,7 +64,7 @@ public class DrawLine : MonoBehaviour
 
         DisZeroDrag();
         
-        if(Input.GetKeyDown(KeyCode.Space)){
+        if(Input.GetKeyDown(KeyCode.Space)){        
             objBullet.GetComponent<Rigidbody>().useGravity = true;
             objBullet.GetComponent<Rigidbody>().AddForce(vel * mass,ForceMode.Impulse);
             Debug.Log(vel * mass);

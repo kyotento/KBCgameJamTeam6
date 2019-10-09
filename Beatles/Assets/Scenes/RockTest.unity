@@ -266,7 +266,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 820720950}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fb49577f1c4d6456eb1cb3efdda6edf6, type: 3}
   m_Name: 
@@ -278,14 +278,15 @@ MonoBehaviour:
   mass: 1
   drag: 0
   x: 0
-  y: 0
+  y: -3
   z: 0
   initVel: 30
   angle: 45
   step: 0.05
   time: 0
   vel: {x: 0, y: 0, z: 0}
-  velo: {x: 5, y: 5, z: 5}
+  velo: {x: 5, y: 5, z: 0}
+  drawSec: 5
 --- !u!4 &820720952
 Transform:
   m_ObjectHideFlags: 0
@@ -294,7 +295,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 820720950}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -511,7 +512,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!65 &1451581176
 BoxCollider:
   m_ObjectHideFlags: 0
