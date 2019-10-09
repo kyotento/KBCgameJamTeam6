@@ -57,14 +57,38 @@ public class Player : MonoBehaviour
 
         float lx = Input.GetAxis("Horizontal");
         float lz = Input.GetAxis("Vertical");
-        float rx = Input.GetAxis("Horizontal2");
-        float rz = Input.GetAxis("Vertical2");
+        float rx = Input.GetAxis("Horizontal2") * rotSpeed;
+        float rz = Input.GetAxis("Vertical2") * rotSpeed;
 
         move.x = lx * speed;
         move.z = lz * speed;
 
-        Vector3 angle = new Vector3(-rz  * rotSpeed, rx * rotSpeed,0);
-        mainCamera.transform.Rotate(angle);
+
+        //Vector3 angle = new Vector3(- rz * rotSpeed, rx * rotSpeed, 0);
+        //if(angle.y >= 0.99f)
+        //{
+        //    angle.y = 0.99f;
+        //}
+        //if(angle.y <= - 0.99f)
+        //{
+        //    angle.y = -0.99f;
+        //}
+
+        float maxLimit = 60, minLimit = 360 - maxLimit;
+
+        //y回転。
+        var localAngle = transform.localEulerAngles;
+        localAngle.x -= rz;
+        if (localAngle.x > maxLimit && localAngle.x < 180)
+            localAngle.x = maxLimit;
+        if (localAngle.x < minLimit && localAngle.x > 180)
+            localAngle.x = minLimit;
+        mainCamera.transform.localEulerAngles = localAngle;
+        //x回転。
+        var angle = transform.eulerAngles;
+        angle.y += rx;
+        mainCamera.transform.eulerAngles = angle;
+
         charaCon.Move(move);
 
     }
