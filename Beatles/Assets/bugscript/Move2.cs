@@ -40,7 +40,7 @@ public class Move2 : MonoBehaviour
        
         diff.Normalize();
 
-        charaCon.Move(diff/4.0f);
+        charaCon.Move(diff/8.0f);
         
 
     }
