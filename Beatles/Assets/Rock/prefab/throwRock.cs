@@ -14,8 +14,8 @@ public class throwRock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.position.y >= 3){
-            GetComponentInParent<Collider>().isTrigger = false;
+        if(transform.position.y >= 1){
+            //GetComponentInParent<Collider>().isTrigger = false;
         }
     }
 
@@ -37,7 +37,10 @@ public class throwRock : MonoBehaviour
         var rb = GetComponent<Rigidbody>();
         rb.useGravity = true;
         rb.AddForce(vel * rb.mass, ForceMode.Impulse);
+        Invoke("TriggerOff",0.3f);
     }
 
-    
+    void TriggerOff(){
+        GetComponentInParent<Collider>().isTrigger = false;
+    }
 }
