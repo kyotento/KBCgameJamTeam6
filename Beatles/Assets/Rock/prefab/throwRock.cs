@@ -6,6 +6,7 @@ public class throwRock : MonoBehaviour
 {
 
     bool isNotified = false;    // Start is called before the first frame update
+    private float gravity = 9.80665f;
     void Start()
     {
 

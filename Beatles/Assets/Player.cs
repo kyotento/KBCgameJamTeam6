@@ -8,8 +8,12 @@ public class Player : MonoBehaviour
 
     [SerializeField] GameObject rockPrefab;
     [SerializeField] Vector3 handPos;
+
+    [SerializeField] GameObject arrow;
     private GameObject standbyRock;
     bool hasRock = true;
+
+    private float gravity = 9.80665f;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +28,8 @@ public class Player : MonoBehaviour
 
     public float speed = 5;
     
-
+    private Vector3 fallPos;
+    float x,y,z;
     // Update is called once per frame
     void Update()
     {
@@ -34,19 +39,34 @@ public class Player : MonoBehaviour
         charaCon.Move(move);
 
 
+        var thvec = this.transform.forward * 2;
+        thvec.y += 3f;     
+
         if(hasRock){
             var handPos = transform.position;
             handPos += (transform.forward * 0.5f);      
             handPos.y -= 0.5f;      
             standbyRock.transform.SetPositionAndRotation(handPos,transform.rotation);
+            
+            var time = 0f;            
+            for(int i = 0; i < 5000; i++){
+                 x = thvec.x * time;
+                 z = thvec.z * time;
+                 y = thvec.y * time - 0.5f * gravity * (time * time + time * Time.fixedDeltaTime);
+                time += 0.5f;
+                if(y < 0) break;
+            }
+            fallPos = new Vector3(x + this.transform.position.x, y + this.transform.position.y, z + transform.position.z);
+            fallPos.y = 0f;
+            arrow.transform.SetPositionAndRotation(fallPos,Quaternion.identity);
+            Debug.Log(fallPos);
+            
+
         }
         if(Input.GetKeyDown(KeyCode.Space)){
-            if(hasRock){
-                var thvec = this.transform.forward * 2;
-                thvec.y += 3f;        
+            if(hasRock){   
                 standbyRock.GetComponent<throwRock>().Throw(thvec);                
                 hasRock = false;  
-                
                 Invoke("Reload",1);
             }
         }
