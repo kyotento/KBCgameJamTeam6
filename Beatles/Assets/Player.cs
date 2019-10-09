@@ -6,14 +6,24 @@ public class Player : MonoBehaviour
 {
     private GameObject mainCamera;
 
+    [SerializeField] GameObject rockPrefab;
+    [SerializeField] Vector3 handPos;
+    private GameObject standbyRock;
+    bool hasRock = true;
+
     // Start is called before the first frame update
     void Start()
     {
         mainCamera = Camera.main.gameObject;
+        var ps = this.transform.position;
+        standbyRock = Instantiate(rockPrefab,gameObject.transform);  
+        standbyRock.GetComponent<Collider>().isTrigger = true;                 
+        standbyRock.transform.parent = null;
     }
     public float rotSpeed = 5;
 
     public float speed = 5;
+    
 
     // Update is called once per frame
     void Update()
@@ -22,6 +32,25 @@ public class Player : MonoBehaviour
 
         Vector3 move = new Vector3();
         charaCon.Move(move);
+
+
+        if(hasRock){
+            var handPos = transform.position;
+            handPos += (transform.forward * 0.5f);      
+            handPos.y -= 0.5f;      
+            standbyRock.transform.SetPositionAndRotation(handPos,transform.rotation);
+        }
+        if(Input.GetKeyDown(KeyCode.Space)){
+            if(hasRock){
+                var thvec = this.transform.forward * 2;
+                thvec.y += 3f;        
+                standbyRock.GetComponent<throwRock>().Throw(thvec);                
+                hasRock = false;  
+                
+                Invoke("Reload",1);
+            }
+        }
+        
 
         //if(Input.GetKey(KeyCode.A))
         //{
@@ -91,5 +120,12 @@ public class Player : MonoBehaviour
 
         charaCon.Move(move);
 
+    }
+
+    void Reload(){
+        hasRock = true;
+        standbyRock = Instantiate(rockPrefab,gameObject.transform);                   
+        standbyRock.transform.parent = null;
+        standbyRock.GetComponent<Collider>().isTrigger = true;        
     }
 }

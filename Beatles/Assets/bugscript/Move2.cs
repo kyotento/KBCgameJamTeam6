@@ -25,8 +25,10 @@ public class Move2 : MonoBehaviour
     void Update()
     {
         m_timer++;
-        CharacterController charaCon =
+        
+        var charaCon =
             gameObject.GetComponent<CharacterController>();
+
         if (m_timer > 90)
         {
             targetnum = Random.Range(1, 6);
@@ -37,8 +39,12 @@ public class Move2 : MonoBehaviour
         diff = target[targetnum] - this.gameObject.transform.position;
        
         diff.Normalize();
+<<<<<<< HEAD
         charaCon.Move(diff/4.0f);
 
         
+=======
+        charaCon.Move(diff / 50.0f);
+>>>>>>> 853cb26290705d981ace7348df9136f4f0bcca5f
     }
 }
