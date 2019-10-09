@@ -13,12 +13,12 @@ public class Move2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        target[0].Set(20.0f, 1.05f, 20.0f);
-        target[1].Set(20.0f, 1.05f, 0.0f);
-        target[2].Set(20.0f, 1.05f, -20.0f);
-        target[3].Set(-20.0f, 1.05f, 20.0f);
-        target[4].Set(-20.0f, 1.05f, 0.0f);
-        target[5].Set(-20.0f, 1.05f, -20.0f);
+        target[0].Set(0.0f, 4.14f, 5.5f);
+        target[1].Set(0.0f, 4.14f, 5.5f);
+        target[2].Set(5.25f, 4.14f, 8.7f);
+        target[3].Set(-5.25f, 4.14f, 8.7f);
+        target[4].Set(-8.25f, 4.14f, 5.5f);
+        target[5].Set(-8.25f, 4.14f, 8.7f);
     }
 
     // Update is called once per frame
@@ -37,6 +37,10 @@ public class Move2 : MonoBehaviour
         diff = target[targetnum] - this.gameObject.transform.position;
        
         diff.Normalize();
+<<<<<<< HEAD
         charaCon.Move(diff/4.0f);
+=======
+        charaCon.Move(diff / 50.0f);
+>>>>>>> f5fed66015a4d7a080a0f93b4d863b46e59aeceb
     }
 }
