@@ -33,7 +33,7 @@ public class Move1 : MonoBehaviour
         
             
         
-        if (m_timer > 60)
+        if (m_timer > 160)
         {
 
             targetnum = Random.Range(1, 6);
@@ -42,14 +42,21 @@ public class Move1 : MonoBehaviour
         }
         //y = m_timer*2.0f;
        // add.Set(0.0f, y, 0.0f);
-        diff = target[targetnum] - this.gameObject.transform.position;
-        if (m_timer < 50)
+        
+        if (m_timer < 150)
         {
 
             diff.Set(0.0f, 0.0f, 0.0f);
         }
-        
-
+        if(m_timer>=0&&m_timer<55)
+        {
+            add.Set(0.0f, 4.0f, 0.0f);
+        }
+        if (m_timer >= 55.0f && m_timer < 110)
+        {
+            add.Set(0.0f, -4.0f, 0.0f);
+        }
+        diff = target[targetnum] - this.gameObject.transform.position+add;
         diff.Normalize();
         charaCon.Move(diff*1.5f);
 
