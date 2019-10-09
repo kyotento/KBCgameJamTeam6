@@ -25,8 +25,10 @@ public class Move2 : MonoBehaviour
     void Update()
     {
         m_timer++;
-        CharacterController charaCon =
+        
+        var charaCon =
             gameObject.GetComponent<CharacterController>();
+
         if (m_timer > 90)
         {
             targetnum = Random.Range(1, 6);

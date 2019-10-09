@@ -1,5 +1,9 @@
 sceneSetups:
+<<<<<<< HEAD
+- path: Assets/Scenes/RockTest.unity
+=======
 - path: Assets/Scenes/Title.unity
+>>>>>>> master
   isLoaded: 1
   isActive: 1
   isSubScene: 0
