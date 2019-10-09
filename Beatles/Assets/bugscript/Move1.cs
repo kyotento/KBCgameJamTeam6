@@ -6,6 +6,8 @@ public class Move1 : MonoBehaviour
 {
     public Vector3[] target = new Vector3[6];
     public Vector3 diff;
+    Vector3 add;
+    float y;
     public int i = 0;
     public int m_timer = 0;
     public int targetnum = 0;
@@ -19,6 +21,7 @@ public class Move1 : MonoBehaviour
         target[3].Set(-20.0f, 1.05f, 20.0f);
         target[4].Set(-20.0f, 1.05f, 0.0f);
         target[5].Set(-20.0f, 1.05f, -20.0f);
+        
     }
 
     // Update is called once per frame
@@ -27,20 +30,28 @@ public class Move1 : MonoBehaviour
         m_timer++;
         CharacterController charaCon =
             gameObject.GetComponent<CharacterController>();
-        if (m_timer >= 30)
-        {
-            diff = target[targetnum] - this.gameObject.transform.position;
-
-            diff.Normalize();
-            charaCon.Move(diff);
-        }
+        
+            
+        
         if (m_timer > 60)
         {
+
             targetnum = Random.Range(1, 6);
             
             m_timer = 0;
         }
+        //y = m_timer*2.0f;
+       // add.Set(0.0f, y, 0.0f);
+        diff = target[targetnum] - this.gameObject.transform.position;
+        if (m_timer < 50)
+        {
 
-       
+            diff.Set(0.0f, 0.0f, 0.0f);
+        }
+        
+
+        diff.Normalize();
+        charaCon.Move(diff*1.5f);
+
     }
 }
