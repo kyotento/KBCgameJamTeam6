@@ -14,7 +14,8 @@ public class SceneTransition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKey(KeyCode.B))
+        //if(Input.GetKey(KeyCode.B))
+        if(Input.GetKeyDown("joystick button 1"))
         {
             SceneManager.LoadScene("Starge");
         }
