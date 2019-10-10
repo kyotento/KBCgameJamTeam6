@@ -29,6 +29,8 @@ public class RockNotifyReceiver : MonoBehaviour
                 {
                     bug.GetComponent<bug_Move>().Escape(rock.transform.position,true); ;
                 }
+
+               
             }
         }
         //        
