@@ -26,7 +26,7 @@ MonoBehaviour:
   m_MinSize: {x: 917, y: 444}
   m_MaxSize: {x: 22012, y: 10022}
   vertical: 0
-  controlID: 238
+  controlID: 2976
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 444}
   m_MaxSize: {x: 4002, y: 8044}
   vertical: 1
-  controlID: 239
+  controlID: 2955
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -189,16 +189,16 @@ MonoBehaviour:
   m_ShowContextualTools: 0
   m_WindowGUID: 7ee677485ddba4c6d86b78377bee54c2
   m_Gizmos: 1
-  m_SceneIsLit: 1
+  m_SceneIsLit: 0
   m_SceneLighting: 1
   m_2DMode: 0
   m_isRotationLocked: 0
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0, y: 3, z: 3.9300003}
+    m_Target: {x: -2.44, y: 4.69, z: 6.817}
     speed: 2
-    m_Value: {x: 0, y: 3, z: 3.9300003}
+    m_Value: {x: -2.44, y: 4.69, z: 6.817}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -209,7 +209,7 @@ MonoBehaviour:
   m_SceneViewState:
     showFog: 1
     showMaterialUpdate: 0
-    showSkybox: 1
+    showSkybox: 0
     showFlares: 1
     showImageEffects: 1
     showParticleSystems: 1
@@ -227,13 +227,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: 0.07683163, y: 0.84807813, z: -0.12817428, w: 0.50836295}
+    m_Target: {x: -0.058824398, y: 0.93950063, z: -0.20793095, w: -0.26578802}
     speed: 2
-    m_Value: {x: 0.07683159, y: 0.84807765, z: -0.1281742, w: 0.50836265}
+    m_Value: {x: -0.05882439, y: 0.9395005, z: -0.20793092, w: -0.265788}
   m_Size:
-    m_Target: 13.732597
+    m_Target: 0.8573657
     speed: 2
-    m_Value: 13.732597
+    m_Value: 0.8573657
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -368,7 +368,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: d0bafeff0ac8feff
+      m_ExpandedIDs: f271feff0af30000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -457,20 +457,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/SE
+    - Assets/Rock/prefab
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/SE
+  - Assets/Rock/prefab
   m_LastFoldersGridSize: -1
   m_LastProjectPath: /Users/Noah/KBCgameJamTeam6/Beatles
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 2aea0000
-    m_LastClickedID: 59946
-    m_ExpandedIDs: 00000000f8b40000feb4000040b60000fcb6000062b7000028bb00005ec5000060c5000000ca9a3b
+    m_SelectedIDs: 58b70000
+    m_LastClickedID: 46936
+    m_ExpandedIDs: 00000000f8b40000feb40000d0b50000fcb6000062b7000028bb00005ec5000060c5000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -498,7 +498,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f8b40000fcb6000062b7000028bb000000ca9a3b
+    m_ExpandedIDs: 00000000f8b40000feb4000040b60000fcb6000062b7000028bb00005ec5000060c5000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -523,8 +523,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 36ea0000
-    m_LastClickedInstanceID: 59958
+    m_SelectedInstanceIDs: 0af30000
+    m_LastClickedInstanceID: 62218
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c0b40000
     m_RenameOverlay:
@@ -616,5 +616,5 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
-  m_LastInspectedObjectInstanceID: 59958
+  m_LastInspectedObjectInstanceID: 62218
   m_LastVerticalScrollValue: 0
