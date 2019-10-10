@@ -25,7 +25,10 @@ public class RockNotifyReceiver : MonoBehaviour
             diff = bug.transform.position - rock.transform.position;
             if (diff.sqrMagnitude<10.0f)
             {
-                bug.GetComponent<bug_Move>().Escape(rock.transform.position,true); ;
+                if(bug.GetComponent<bug_Move>())
+                {
+                    bug.GetComponent<bug_Move>().Escape(rock.transform.position,true); ;
+                }
             }
         }
         //        
