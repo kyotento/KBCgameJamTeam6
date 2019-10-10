@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    private CharacterController charaCon;       // キャラクターコンポーネント用の変数
+    private Animator animCon;  //  アニメーションするための変数
+    private Vector3 moveDirection = Vector3.zero;   //  移動する方向とベクトルの変数（最初は初期化しておく）
+
+    public float idoSpeed = 5.0f;         // 移動速度（Public＝インスペクタで調整可能）
+    public float rotateSpeed = 3.0F;     // 向きを変える速度（Public＝インスペクタで調整可能）
+    public float kaitenSpeed = 1200.0f;   // プレイヤーの回転速度（Public＝インスペクタで調整可能）    
     private GameObject mainCamera;
 
     [SerializeField] GameObject rockPrefab;
@@ -61,18 +68,16 @@ public class Player : MonoBehaviour
             arrow.transform.SetPositionAndRotation(fallPos,Quaternion.identity);
             Debug.Log(fallPos);
             
-
         }
 
         //石を投げる処理。
-        if(Input.GetKeyDown("joystick button 4") || Input.GetKeyDown("joystick button 5")){
+        if(Input.GetKeyDown("joystick button 4") || Input.GetKeyDown("joystick button 5") || Input.GetKeyDown(KeyCode.Space)){
             if (hasRock){   
                 standbyRock.GetComponent<throwRock>().Throw(thvec);                
                 hasRock = false;  
                 Invoke("Reload",1);
             }
         }
-        
 
         //if(Input.GetKey(KeyCode.A))
         //{
@@ -139,6 +144,12 @@ public class Player : MonoBehaviour
         var angle = transform.eulerAngles;
         angle.y += rx;
         mainCamera.transform.eulerAngles = angle;
+
+
+        if(!charaCon.isGrounded){
+            move.y -= gravity * Time.deltaTime;
+        }
+
 
         charaCon.Move(move);
 
