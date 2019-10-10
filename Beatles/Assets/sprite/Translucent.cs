@@ -8,7 +8,7 @@ public class Translucent : MonoBehaviour
     void Start()
     {
         Color color = gameObject.GetComponent<Renderer>().material.color;
-        color.a = 0.8f;
+        color.a = 0.9f;
 
         gameObject.GetComponent<Renderer>().material.color = color;
 
