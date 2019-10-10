@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class batta : MonoBehaviour
+public class tentou_Move : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

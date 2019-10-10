@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Move2 : MonoBehaviour
+public class spider_Move : MonoBehaviour
 {
     public  Vector3[] target = new Vector3[6];
     public Vector3 diff;

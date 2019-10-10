@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Move1 : MonoBehaviour
+public class batta_Move : MonoBehaviour
 {
     public Vector3[] target = new Vector3[6];
     public Vector3 diff;
