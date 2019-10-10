@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RockNotifyReceiver : MonoBehaviour
 {
+    public Vector3 diff;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,15 @@ public class RockNotifyReceiver : MonoBehaviour
 
     public void ReceiveRockAction(GameObject rock){
         Debug.Log("received rock acction");
+
+        foreach(var bug in GameObject.FindGameObjectsWithTag("Bug"))
+        {
+            diff = bug.transform.position - rock.transform.position;
+            if (diff.sqrMagnitude<10.0f)
+            {
+                bug.GetComponent<bug_Move>().Escape(rock.transform.position,true); ;
+            }
+        }
         //        
         //GetComponent<Rigidbody>().AddForce(0,10,0,ForceMode.Impulse);
     }

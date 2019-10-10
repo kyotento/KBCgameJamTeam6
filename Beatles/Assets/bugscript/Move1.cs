@@ -15,13 +15,14 @@ public class Move1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        target[0].Set(20.0f, 1.05f, 20.0f);
-        target[1].Set(20.0f, 1.05f, 0.0f);
-        target[2].Set(20.0f, 1.05f, -20.0f);
-        target[3].Set(-20.0f, 1.05f, 20.0f);
-        target[4].Set(-20.0f, 1.05f, 0.0f);
-        target[5].Set(-20.0f, 1.05f, -20.0f);
-        
+        target[0].Set(-7.0f, 4.14f, 5.5f);
+        target[1].Set(-7.0f, 4.14f, 7.5f);
+        target[2].Set(5.25f, 4.14f, 8.7f);
+        target[3].Set(-5.25f, 4.14f, 8.7f);
+        target[4].Set(-8.25f, 4.14f, 5.5f);
+        target[5].Set(-8.25f, 4.14f, 8.7f);
+
+
     }
 
     // Update is called once per frame
@@ -33,7 +34,7 @@ public class Move1 : MonoBehaviour
         
             
         
-        if (m_timer > 160)
+        if (m_timer > 360)
         {
 
             targetnum = Random.Range(1, 6);
@@ -43,22 +44,22 @@ public class Move1 : MonoBehaviour
         //y = m_timer*2.0f;
        // add.Set(0.0f, y, 0.0f);
         
-        if (m_timer < 150)
+        if (m_timer < 300)
         {
 
             diff.Set(0.0f, 0.0f, 0.0f);
         }
         if(m_timer>=0&&m_timer<55)
         {
-            add.Set(0.0f, 4.0f, 0.0f);
+            add.Set(0.0f, 0.5f, 0.0f);
         }
         if (m_timer >= 55.0f && m_timer < 110)
         {
-            add.Set(0.0f, -4.0f, 0.0f);
+            add.Set(0.0f, -0.5f, 0.0f);
         }
         diff = target[targetnum] - this.gameObject.transform.position+add;
         diff.Normalize();
-        charaCon.Move(diff*1.5f);
+        charaCon.Move(diff/4.0f);
 
     }
 }
