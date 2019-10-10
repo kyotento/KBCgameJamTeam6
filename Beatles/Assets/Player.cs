@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
     private GameObject mainCamera;
 
     [SerializeField] GameObject rockPrefab;
+
+    public float ypos = 3.5f;
     [SerializeField] Vector3 handPos;
 
     [SerializeField] GameObject arrow;
@@ -53,7 +55,7 @@ public class Player : MonoBehaviour
         if(hasRock){
             var handPos = transform.position;
             handPos += (transform.forward * 0.5f);      
-            handPos.y -= 0.5f;      
+            handPos.y -= 0.4f;      
             standbyRock.transform.SetPositionAndRotation(handPos,transform.rotation);
             
             var time = 0f;            
@@ -65,10 +67,9 @@ public class Player : MonoBehaviour
                 if(y < 0) break;
             }
             fallPos = new Vector3(x + this.transform.position.x, y + this.transform.position.y, z + transform.position.z);
-            fallPos.y = 0f;
-            arrow.transform.SetPositionAndRotation(fallPos,Quaternion.identity);
-            Debug.Log(fallPos);
-            
+            fallPos.y = ypos;
+            arrow.transform.SetPositionAndRotation(fallPos,arrow.transform.rotation);
+            Debug.Log(fallPos);            
         }
 
         //石を投げる処理。
@@ -122,7 +123,6 @@ public class Player : MonoBehaviour
         
         move = transform.forward * lz * speed;        　　　　
         move += transform.right * lx * speed;
-
 
         //Vector3 angle = new Vector3(- rz * rotSpeed, rx * rotSpeed, 0);
         //if(angle.y >= 0.99f)
