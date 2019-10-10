@@ -7,6 +7,8 @@ public class Timer : MonoBehaviour
 {
     public float time = 60;
 
+    public bool Clear = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +17,7 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (time >= 1)
+        if (time >= 1 && Clear == false)
         {
             time -= Time.deltaTime;
             int t = Mathf.FloorToInt(time);
