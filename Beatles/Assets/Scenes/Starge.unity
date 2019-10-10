@@ -404,6 +404,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08035d4afbf371489509938a9fa2236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  time: 0
 --- !u!1001 &449999823
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -735,6 +736,50 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 4
   m_CollisionDetection: 0
+--- !u!1 &573196918
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 573196919}
+  - component: {fileID: 573196920}
+  m_Layer: 0
+  m_Name: Clear
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &573196919
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573196918}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.1254574, y: 7.625017, z: 8.760122}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &573196920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573196918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 220c6eca2dc1f954f9029cd8ea35f60b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerTextObj: {fileID: 398075828}
 --- !u!1 &642065621
 GameObject:
   m_ObjectHideFlags: 0
@@ -1140,6 +1185,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53696984d6f423b4dacf30549a4fd8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  idoSpeed: 5
+  rotateSpeed: 3
+  kaitenSpeed: 1200
   rockPrefab: {fileID: 3898993421467700207, guid: 92000aa601fb0495e9f5e14c9ece5340,
     type: 3}
   handPos: {x: 0, y: 0, z: 1}
@@ -1901,6 +1949,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53696984d6f423b4dacf30549a4fd8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  idoSpeed: 5
+  rotateSpeed: 3
+  kaitenSpeed: 1200
   rockPrefab: {fileID: 0}
   handPos: {x: 0, y: 0, z: 0}
   arrow: {fileID: 0}
