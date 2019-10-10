@@ -57,8 +57,8 @@ public class Player : MonoBehaviour
                 if(y < 0) break;
             }
             fallPos = new Vector3(x + this.transform.position.x, y + this.transform.position.y, z + transform.position.z);
-            fallPos.y = 0f;
-            arrow.transform.SetPositionAndRotation(fallPos,Quaternion.identity);
+            fallPos.y = 3.5f;
+            arrow.transform.SetPositionAndRotation(fallPos,arrow.transform.rotation);
             Debug.Log(fallPos);
             
 
@@ -111,9 +111,11 @@ public class Player : MonoBehaviour
         float rx = Input.GetAxis("Horizontal2") * rotSpeed;
         float rz = Input.GetAxis("Vertical2") * rotSpeed;
 
-        move.x = lx * speed;
-        move.z = lz * speed;
+        //move.x = lx * speed;
+        //move.z = lz * speed;
 
+        move = transform.forward * lz * speed;
+        move += transform.right * lx * speed;
 
         //Vector3 angle = new Vector3(- rz * rotSpeed, rx * rotSpeed, 0);
         //if(angle.y >= 0.99f)
@@ -140,6 +142,9 @@ public class Player : MonoBehaviour
         angle.y += rx;
         mainCamera.transform.eulerAngles = angle;
 
+        if(!charaCon.isGrounded){
+            move.y -= gravity * Time.deltaTime;
+        }
         charaCon.Move(move);
 
     }
