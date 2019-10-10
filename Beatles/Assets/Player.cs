@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
         if(hasRock){
             var handPos = transform.position;
             handPos += (transform.forward * 0.5f);      
-            handPos.y -= 0.5f;      
+            handPos.y -= 0.4f;      
             standbyRock.transform.SetPositionAndRotation(handPos,transform.rotation);
             
             var time = 0f;            
