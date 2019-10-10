@@ -117,8 +117,11 @@ public class Player : MonoBehaviour
         float rx = Input.GetAxis("Horizontal2") * rotSpeed;
         float rz = Input.GetAxis("Vertical2") * rotSpeed;
 
-        move.x = lx * speed;
-        move.z = lz * speed;
+        //move.x = lx * speed;
+        //move.z = lz * speed;
+        
+        move = transform.forward * lz * speed;        　　　　
+        move += transform.right * lx * speed;
 
 
         //Vector3 angle = new Vector3(- rz * rotSpeed, rx * rotSpeed, 0);
