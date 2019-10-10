@@ -65,7 +65,7 @@ public class Player : MonoBehaviour
         }
 
         //石を投げる処理。
-        if(Input.GetKeyDown("joystick button 4") || Input.GetKeyDown("joystick button 5")){
+        if(Input.GetKeyDown("joystick button 4") || Input.GetKeyDown("joystick button 5") || Input.GetKeyDown(KeyCode.Space)){
             if (hasRock){   
                 standbyRock.GetComponent<throwRock>().Throw(thvec);                
                 hasRock = false;  
