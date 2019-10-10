@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class clear : MonoBehaviour
 {
@@ -52,7 +53,11 @@ public class clear : MonoBehaviour
         //クリアか失敗した時。
         if(ReStart == true)
         {
-
+            if(Input.anyKey)
+            {
+                ReStart = false;
+                SceneManager.LoadScene("Title");
+            }
         }
 
     }
