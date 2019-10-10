@@ -47,7 +47,8 @@ public class Player : MonoBehaviour
 
 
         var thvec = this.transform.forward * 2;
-        thvec.y += 3f;     
+        thvec.y += 3f;
+        
 
         if(hasRock){
             var handPos = transform.position;
