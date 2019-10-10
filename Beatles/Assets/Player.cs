@@ -59,7 +59,7 @@ public class Player : MonoBehaviour
             fallPos = new Vector3(x + this.transform.position.x, y + this.transform.position.y, z + transform.position.z);
             fallPos.y = 3.5f;
             arrow.transform.SetPositionAndRotation(fallPos,arrow.transform.rotation);
-            Debug.Log(fallPos);
+            //Debug.Log(fallPos);
             
 
         }
