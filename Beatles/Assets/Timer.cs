@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    public float time;
+    public static float time;
 
     // Start is called before the first frame update
     void Start()
@@ -16,12 +16,9 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (time >= 1)
-        {
-            time -= Time.deltaTime;
-            int t = Mathf.FloorToInt(time);
-            Text uiText = GetComponent<Text>();
-            uiText.text = "Time" + t;
-        }
+        time -= Time.deltaTime;
+        int t = Mathf.FloorToInt(time);
+        Text uiText = GetComponent<Text>();
+        uiText.text = "Time" + t;
     }
 }
