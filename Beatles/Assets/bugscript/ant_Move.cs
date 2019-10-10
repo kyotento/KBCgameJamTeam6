@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class bug_Move : MonoBehaviour
+public class ant_Move : MonoBehaviour
 {
    public Vector3 move = new Vector3();
     Vector3 diff =new Vector3();
