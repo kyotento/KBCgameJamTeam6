@@ -38,7 +38,11 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
+<<<<<<< HEAD
   m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+=======
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+>>>>>>> 406e0692c9500f5f01f082e2f6323ff14e7208d3
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -404,6 +408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f08035d4afbf371489509938a9fa2236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  time: 0
 --- !u!1001 &449999823
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -738,12 +743,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 4
   m_CollisionDetection: 0
+<<<<<<< HEAD
 --- !u!136 &542998367
 CapsuleCollider:
+=======
+--- !u!1 &573196918
+GameObject:
+>>>>>>> 406e0692c9500f5f01f082e2f6323ff14e7208d3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
   m_GameObject: {fileID: 542998361}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -752,6 +763,46 @@ CapsuleCollider:
   m_Height: 2.5955107
   m_Direction: 1
   m_Center: {x: 0.7964725, y: 0, z: 0.001282803}
+=======
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 573196919}
+  - component: {fileID: 573196920}
+  m_Layer: 0
+  m_Name: Clear
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &573196919
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573196918}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.1254574, y: 7.625017, z: 8.760122}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &573196920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573196918}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 220c6eca2dc1f954f9029cd8ea35f60b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timerTextObj: {fileID: 398075828}
+>>>>>>> 406e0692c9500f5f01f082e2f6323ff14e7208d3
 --- !u!1 &642065621
 GameObject:
   m_ObjectHideFlags: 0
@@ -1016,7 +1067,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 21300000, guid: df34c3f7eb7ca42f39d69586b410f8b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1034,13 +1085,18 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 778648833}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.000000059604645, y: 0, z: 3.93}
-  m_LocalScale: {x: 5, y: 200, z: 5}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -3.57, y: 4.09, z: 8.92}
+  m_LocalScale: {x: 0.10889, y: 0.10889, z: 0.10889}
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< HEAD
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+>>>>>>> 406e0692c9500f5f01f082e2f6323ff14e7208d3
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1157,8 +1213,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53696984d6f423b4dacf30549a4fd8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  idoSpeed: 5
+  rotateSpeed: 3
+  kaitenSpeed: 1200
   rockPrefab: {fileID: 3898993421467700207, guid: 92000aa601fb0495e9f5e14c9ece5340,
     type: 3}
+  ypos: 3.5
   handPos: {x: 0, y: 0, z: 1}
   arrow: {fileID: 778648833}
   rotSpeed: 5
@@ -1924,7 +1984,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53696984d6f423b4dacf30549a4fd8d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  idoSpeed: 5
+  rotateSpeed: 3
+  kaitenSpeed: 1200
   rockPrefab: {fileID: 0}
+  ypos: 3
   handPos: {x: 0, y: 0, z: 0}
   arrow: {fileID: 0}
   rotSpeed: 5
