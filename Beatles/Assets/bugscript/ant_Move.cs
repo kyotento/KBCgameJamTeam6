@@ -67,7 +67,7 @@ public class ant_Move : MonoBehaviour
             }
         }
 
-        charaCon.Move(move);
+        charaCon.Move(move/5.0f);
     }
     
 }

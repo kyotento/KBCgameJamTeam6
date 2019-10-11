@@ -23,10 +23,10 @@ MonoBehaviour:
     y: 30
     width: 1280
     height: 658
-  m_MinSize: {x: 917, y: 444}
-  m_MaxSize: {x: 22012, y: 10022}
+  m_MinSize: {x: 915, y: 444}
+  m_MaxSize: {x: 22010, y: 10022}
   vertical: 0
-  controlID: 15918
+  controlID: 3595
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -132,7 +132,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 444}
   m_MaxSize: {x: 4002, y: 8044}
   vertical: 1
-  controlID: 15892
+  controlID: 3614
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -196,9 +196,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -3.125265, y: 3.61, z: 8.583223}
+    m_Target: {x: -2.794683, y: 3.8377042, z: 6.761615}
     speed: 2
-    m_Value: {x: -3.125265, y: 3.61, z: 8.583223}
+    m_Value: {x: -2.794683, y: 3.8377042, z: 6.761615}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -227,13 +227,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.29622555, y: 0.27852252, z: -0.09075642, w: -0.90908694}
+    m_Target: {x: -0.09594086, y: 0.89773786, z: -0.3549298, w: -0.24266727}
     speed: 2
-    m_Value: {x: -0.29622552, y: 0.2785225, z: -0.09075641, w: -0.9090868}
+    m_Value: {x: -0.09594084, y: 0.89773774, z: -0.35492977, w: -0.24266724}
   m_Size:
-    m_Target: 1.7277887
+    m_Target: 8.328479
     speed: 2
-    m_Value: 1.7277887
+    m_Value: 8.328479
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -368,7 +368,7 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: ec18feff3628feff6031feff563cfeffd0bafeff0ac8feff
+      m_ExpandedIDs: cac9ffff28d1ffff0cdeffff7edeffff08f5ffff6efbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -457,20 +457,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Rock/prefab
+    - Assets/Rock/scripts
   m_ViewMode: 1
-  m_StartGridSize: 64
+  m_StartGridSize: 57
   m_LastFolders:
-  - Assets/Rock/prefab
-  m_LastFoldersGridSize: -1
+  - Assets/Rock/scripts
+  m_LastFoldersGridSize: 57
   m_LastProjectPath: /Users/Noah/KBCgameJamTeam6/Beatles
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 58b70000
-    m_LastClickedID: 46936
-    m_ExpandedIDs: 00000000f8b40000feb40000d0b50000fcb6000062b7000028bb00005ec5000060c5000000ca9a3b
+    m_SelectedIDs: d24a0000
+    m_LastClickedID: 19154
+    m_ExpandedIDs: 00000000e64200002043000076440000c445000098470000a64900004e4f000024520000d6570000d857000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -498,7 +498,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000f8b40000feb40000d0b50000fcb6000062b7000028bb00005ec5000060c5000000ca9a3b
+    m_ExpandedIDs: 00000000e642000020430000c445000098470000a64900004e4f000024520000d6570000d857000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -523,10 +523,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 68190100
-    m_LastClickedInstanceID: 72040
-    m_HadKeyboardFocusLastEvent: 1
-    m_ExpandedInstanceIDs: c0b4000048510000
+    m_SelectedInstanceIDs: 7a7d0000
+    m_LastClickedInstanceID: 32122
+    m_HadKeyboardFocusLastEvent: 0
+    m_ExpandedInstanceIDs: 48510000c0b40000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -551,7 +551,7 @@ MonoBehaviour:
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 0}
-    m_GridSize: 64
+    m_GridSize: 57
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 112
 --- !u!114 &12
@@ -573,8 +573,8 @@ MonoBehaviour:
     y: 0
     width: 286
     height: 658
-  m_MinSize: {x: 277, y: 72}
-  m_MaxSize: {x: 4002, y: 4022}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -616,5 +616,5 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
-  m_LastInspectedObjectInstanceID: 72040
-  m_LastVerticalScrollValue: 496
+  m_LastInspectedObjectInstanceID: 32122
+  m_LastVerticalScrollValue: 0
