@@ -6,6 +6,7 @@ public class tentou_Move : MonoBehaviour
 {
     public bool deathflag = false;
     public bool stopflag = false;
+    bool sss = false;
     int stimer = 0;
     public Vector3 move = new Vector3();
     public Vector3 move2 = new Vector3();
@@ -39,47 +40,57 @@ public class tentou_Move : MonoBehaviour
     }
     public void Stop()
     {
-        if(stopflag)
-        {
-            stimer++;
-            g_diff = goal.transform.position - this.transform.position;
-        }
-        if(stimer<40)
-        {
-
-        }
+        
     }
     // Update is called once per frame
+
     void Update()
     {
-
         CharacterController charaCon =
-          gameObject.GetComponent<CharacterController>();
-
-        if (escapeFlag == true)
+              gameObject.GetComponent<CharacterController>();
+        if (sss == false)
         {
-            etimer++;
+            if (stopflag)
+            {
+                stimer++;
+                g_diff = goal.transform.position - this.transform.position;
+                charaCon.Move(g_diff);
+                
+            }
+            if (stimer > 40)
+            {
+                sss = true;
+            }
+            
 
-        }
-        if (etimer > 120.0f)
-        {
-            escapeFlag = false;
-            etimer = 0;
+            if (escapeFlag == true)
+            {
+                etimer++;
 
-        }
-        if (!charaCon.isGrounded)
-        {
-            move.y -= gravity * Time.deltaTime;
-        }
-        if (escapeFlag == false)
-        {
+            }
+            if (etimer > 120.0f)
+            {
+                escapeFlag = false;
+                etimer = 0;
 
-            pl_diff = player.transform.position - this.transform.position;
-            pl_diff.y = 0.0f;
-            pl_diff.Normalize();
-            move2 = pl_diff / 100.0f;
-            charaCon.Move(move2);
+            }
+            if (!charaCon.isGrounded)
+            {
+                move.y -= gravity * Time.deltaTime;
+            }
+            if (stopflag == false)
+            {
+                if (escapeFlag == false)
+                {
+
+                    pl_diff = player.transform.position - this.transform.position;
+                    pl_diff.y = 0.0f;
+                    pl_diff.Normalize();
+                    move2 = pl_diff / 100.0f;
+                    charaCon.Move(move2);
+                }
+                else charaCon.Move(move);
+            }
         }
-        else charaCon.Move(move);
     }
 }

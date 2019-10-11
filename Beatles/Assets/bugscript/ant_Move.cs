@@ -5,16 +5,20 @@ using UnityEngine;
 
 public class ant_Move : MonoBehaviour
 {
-   public Vector3 move = new Vector3();
+    public bool stopflag = false;
+    bool sss = false;
+    int stimer = 0;
+    public Vector3 move = new Vector3();
     Vector3 diff =new Vector3();
     int m_timer = 0;
     public int etimer =0;
    public bool escapeFlag = false;
-   
+    GameObject goal;
+    public Vector3 g_diff;
     // Start is called before the first frame update
     void Start()
     {
-        
+        goal = GameObject.Find("Sphere (1)");
     }
 
     public void Escape(Vector3 pos,bool flag)
@@ -29,45 +33,56 @@ public class ant_Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       //RockNotifyReceiver m_rock = this.GetComponent<RockNotifyReceiver>();
-       ////m_rock.ReceiveRockAction();
-        CharacterController charaCon =
-          gameObject.GetComponent<CharacterController>();
-        m_timer++;
-        if(escapeFlag == true)
+        if (sss == false)
         {
-            etimer++;
-        }
-        if(etimer++ > 300)
-        {
-            escapeFlag = false;
-            etimer = 0;
-        }
-        if (escapeFlag == false)
-        {
-            if (m_timer < 300)
+            if (stopflag)
             {
-                move.Set(0.03f, -0.1f, 0.0f);
+                stimer++;
+                g_diff = goal.transform.position - this.transform.position;
             }
-            if (m_timer >= 300 && m_timer < 600)
+            if (stimer > 40)
             {
-                move.Set(0.0f, -0.1f, 0.01f);
+                sss = true;
             }
-            if (m_timer >= 600 && m_timer < 900)
+            //RockNotifyReceiver m_rock = this.GetComponent<RockNotifyReceiver>();
+            ////m_rock.ReceiveRockAction();
+            CharacterController charaCon =
+              gameObject.GetComponent<CharacterController>();
+            m_timer++;
+            if (escapeFlag == true)
             {
-                move.Set(-0.03f, -0.1f, 0.0f);
+                etimer++;
             }
-            if (m_timer >= 900 && m_timer < 1200)
+            if (etimer++ > 300)
             {
-                move.Set(0.0f, -0.1f, -0.01f);
+                escapeFlag = false;
+                etimer = 0;
             }
-            if (m_timer >= 1200)
+            if (escapeFlag == false)
             {
-                m_timer = 0;  
+                if (m_timer < 300)
+                {
+                    move.Set(0.03f, -0.1f, 0.0f);
+                }
+                if (m_timer >= 300 && m_timer < 600)
+                {
+                    move.Set(0.0f, -0.1f, 0.01f);
+                }
+                if (m_timer >= 600 && m_timer < 900)
+                {
+                    move.Set(-0.03f, -0.1f, 0.0f);
+                }
+                if (m_timer >= 900 && m_timer < 1200)
+                {
+                    move.Set(0.0f, -0.1f, -0.01f);
+                }
+                if (m_timer >= 1200)
+                {
+                    m_timer = 0;
+                }
             }
-        }
 
-        charaCon.Move(move/5.0f);
+            charaCon.Move(move / 5.0f);
+        }
     }
-    
 }
