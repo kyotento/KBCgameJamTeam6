@@ -29,7 +29,9 @@ public class throwRock : MonoBehaviour
             isFlying = false;
             Debug.Log("collide stage");    
             foreach(var bug in GameObject.FindGameObjectsWithTag("Bug")){
-                bug.GetComponent<RockNotifyReceiver>().ReceiveRockAction(this.gameObject);
+                if(bug.GetComponent<RockNotifyReceiver>()){
+                    bug.GetComponent<RockNotifyReceiver>().ReceiveRockAction(this.gameObject);
+                }
             }
         }
         }
