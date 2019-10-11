@@ -1,10 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class SceneTransition : MonoBehaviour
+public class titleBGM : MonoBehaviour
 {
+
     [SerializeField] AudioSource bgm;
     // Start is called before the first frame update
     void Start()
@@ -15,11 +15,6 @@ public class SceneTransition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if(Input.GetKey(KeyCode.B))
-        if(Input.GetKeyDown("joystick button 1"))
-        {
-            SceneManager.LoadScene("Starge");
-            bgm.Stop();
-        }
+        
     }
 }

@@ -42,7 +42,7 @@ public class clear : MonoBehaviour
         {
        
             sippai.GetComponent<RawImage>().enabled = true;
-            sippaiSe.Play();            //失敗音流す。
+            //sippaiSe.Play();            //失敗音流す。
             stageSe.Stop();
             ReStart = true;
             ooo.GetComponent<Timer>().Clear = true;

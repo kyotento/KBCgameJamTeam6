@@ -7,6 +7,7 @@ public class Translucent : MonoBehaviour
 
     private int countPlusBug = 0;
     public bool isGameOver = false;
+    public AudioSource sippaiSE;
     public bool isGameClear = false;
     // Start is called before the first frame update    
     void Start()
@@ -40,6 +41,7 @@ public class Translucent : MonoBehaviour
         if(col.gameObject.name == "ant")
         {
             isGameOver = true;
+            sippaiSE.Play();
             col.gameObject.GetComponent<ant_Move>().stopflag = true;
             Debug.Log("あり");
         }
@@ -58,6 +60,7 @@ public class Translucent : MonoBehaviour
         if(col.gameObject.name == "Sphere")
         {
             isGameOver = true;
+            sippaiSE.Play();
             col.gameObject.GetComponent<spider_Move>().stopflag = true;
             Debug.Log("バッタ");
         }
