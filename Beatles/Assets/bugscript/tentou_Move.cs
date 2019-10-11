@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class tentou_Move : MonoBehaviour
 {
+    public bool deathflag = false;
+    public bool stopflag = false;
+    int stimer = 0;
     public Vector3 move = new Vector3();
     public Vector3 move2 = new Vector3();
     Vector3 diff = new Vector3();
@@ -14,12 +17,15 @@ public class tentou_Move : MonoBehaviour
     
     public bool escapeFlag = false;
     public GameObject player;
+    GameObject goal;
+    public Vector3 g_diff;
     // Start is called before the first frame update
     void Start()
     {
         //if (player == null)
         
-            player = GameObject.Find("Main Camera");
+        player = GameObject.Find("Main Camera");
+        goal = GameObject.Find("Sphere (1)");
         
     }
     public void Escape(Vector3 pos, bool flag)
@@ -30,6 +36,18 @@ public class tentou_Move : MonoBehaviour
         move += diff /50.0f;
         move.y = 0.0f;
 
+    }
+    public void Stop()
+    {
+        if(stopflag)
+        {
+            stimer++;
+            g_diff = goal.transform.position - this.transform.position;
+        }
+        if(stimer<40)
+        {
+
+        }
     }
     // Update is called once per frame
     void Update()
