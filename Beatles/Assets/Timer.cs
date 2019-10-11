@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour
 {
-    public float time = 60;
+    public float time;
 
     public bool Clear = false;
 
@@ -22,7 +22,7 @@ public class Timer : MonoBehaviour
             time -= Time.deltaTime;
             int t = Mathf.FloorToInt(time);
             Text uiText = GetComponent<Text>();
-            uiText.text = "Time" + t;
+            uiText.text = "のこり" + t + "びょう";
         }
     }
 }
