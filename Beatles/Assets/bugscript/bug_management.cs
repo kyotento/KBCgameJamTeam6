@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class bug_management : MonoBehaviour
 {
-    public bool deathflag = false;
-    public bool isStop = false;
+    
     GameObject obj;
     // Start is called before the first frame update
     void Start()
