@@ -11,9 +11,12 @@ public class Player : MonoBehaviour
 
     [SerializeField] GameObject arrow;
     private GameObject standbyRock;
+
+    [SerializeField] AudioSource swingSe;
+
     bool hasRock = true;
 
-    private float gravity = 9.80665f;
+    private float gravity = 9.80665f;    
 
     // Start is called before the first frame update
     void Start()
@@ -69,7 +72,8 @@ public class Player : MonoBehaviour
             if (hasRock){   
                 standbyRock.GetComponent<throwRock>().Throw(thvec);                
                 hasRock = false;  
-                Invoke("Reload",1);
+                swingSe.Play();
+                Invoke("Reload",1);                
             }
         }
         

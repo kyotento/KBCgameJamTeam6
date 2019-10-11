@@ -7,6 +7,8 @@ public class throwRock : MonoBehaviour
 
     bool isNotified = false;    // Start is called before the first frame update
     private float gravity = 9.80665f;
+
+    public bool isFlying = false;
     void Start()
     {
 
@@ -24,6 +26,7 @@ public class throwRock : MonoBehaviour
         if(other.gameObject.tag == "stage"){         
         if(!isNotified){
             isNotified = true;
+            isFlying = false;
             Debug.Log("collide stage");    
             foreach(var bug in GameObject.FindGameObjectsWithTag("Bug")){
                 bug.GetComponent<RockNotifyReceiver>().ReceiveRockAction(this.gameObject);
@@ -38,6 +41,7 @@ public class throwRock : MonoBehaviour
         var rb = GetComponent<Rigidbody>();
         rb.useGravity = true;
         rb.AddForce(vel * rb.mass, ForceMode.Impulse);
+        isFlying = true;
         Invoke("TriggerOff",0.3f);
     }
 
