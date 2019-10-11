@@ -553,6 +553,12 @@ MonoBehaviour:
   ooo: {fileID: 398075828}
   clea: {fileID: 1851754476}
   sippai: {fileID: 80545775}
+  bags:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!1001 &278349228
 PrefabInstance:
   m_ObjectHideFlags: 0
