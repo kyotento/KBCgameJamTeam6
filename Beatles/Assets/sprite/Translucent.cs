@@ -20,34 +20,40 @@ public class Translucent : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {        
         if(countPlusBug == 3){
             isGameClear = true;
         }
     }
 
-    void OnCollisionEnter (Collision col)
-    {
+    void OnTriggerEnter(Collider col) 
+    {        
         if(isGameClear || isGameOver) return;
         if(col.gameObject.name == "tentou")
         {
             countPlusBug++;
+            Debug.Log("てんとう虫");
+            //col.gameObject.GetComponent<tentou_Move>().stopflag;
         }
         if(col.gameObject.name == "ant")
         {
             isGameOver = true;
+            Debug.Log("あり");
         }
         if(col.gameObject.name == "rolypolymodoli")
         {
             countPlusBug++;   
+            Debug.Log("ダンゴムシ");
         }
         if(col.gameObject.name == "bug1")
         {
             countPlusBug++;
+            Debug.Log("雲");
         }
         if(col.gameObject.name == "Sphere")
         {
             isGameOver = true;
+            Debug.Log("バッタ");
         }
     }
 }
