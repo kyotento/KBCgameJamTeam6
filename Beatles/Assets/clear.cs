@@ -14,8 +14,8 @@ public class clear : MonoBehaviour
     [SerializeField] GameObject sippai;
     [SerializeField] AudioSource clearSe;       //成功音。
     [SerializeField] AudioSource sippaiSe;      //失敗音。
-    [SerializeField] AudioSource clearflag;     //成功。
-    [SerializeField] AudioSource sippaiflag;     //失敗。
+    [SerializeField] GameObject clearflag;     //成功。
+    [SerializeField] GameObject sippaiflag;     //失敗。
     // Start is called before the first frame update
     void Start()
     {
