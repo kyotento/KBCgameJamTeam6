@@ -12,7 +12,10 @@ public class clear : MonoBehaviour
     [SerializeField] GameObject ooo;
     [SerializeField] GameObject clea;
     [SerializeField] GameObject sippai;
-    [SerializeField] GameObject[] bags;
+    [SerializeField] AudioSource clearSe;       //成功音。
+    [SerializeField] AudioSource sippaiSe;      //失敗音。
+    [SerializeField] AudioSource clearflag;     //成功。
+    [SerializeField] AudioSource sippaiflag;     //失敗。
     // Start is called before the first frame update
     void Start()
     {
@@ -29,24 +32,28 @@ public class clear : MonoBehaviour
         //クリア判定検索。
         var cf = ooo.GetComponent<Timer>().Clear;
 
-        //失敗条件。
-        //もし残り時間が０になった時。
-        if (timer < 1)
-        {
-            if(true)
-            {
-                sippai.GetComponent<RawImage>().enabled = true;
-                ReStart = true;
+        var sif = sippaiflag.GetComponent<Translucent>().isGameOver;
+        var sef = sippaiflag.GetComponent<Translucent>().isGameClear;
 
-                cf = true;
-            }
+        //失敗条件。
+        //もし残り時間が０になった時または失敗フラグがたったとき。
+        if (timer < 1 || sif == true)
+        {
+       
+            sippai.GetComponent<RawImage>().enabled = true;
+            sippaiSe.Play();            //失敗音流す。
+            ReStart = true;
+
+            cf = true;
+          
         }
 
         //成功条件。
         //虫が全員入った。
-        if( false )
+        if( sef == true )
         {
             clea.GetComponent<RawImage>().enabled = true;
+            clearSe.Play();         //成功流す。
             cf = true;
             ReStart = true;
         }
@@ -54,10 +61,12 @@ public class clear : MonoBehaviour
         //クリアか失敗した時。
         if(ReStart == true)
         {
-            if(Input.anyKey)
+            if(Input.GetKeyDown("joystick button 1"))
             {
                 ReStart = false;
-                SceneManager.LoadScene("Title");
+                SceneManager.LoadScene("Title");    //タイトル流す。
+                sippaiSe.Stop();                    //失敗音流す。
+                clearSe.Stop();                    //成功音流す。
             }
         }
 
