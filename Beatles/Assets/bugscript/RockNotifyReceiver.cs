@@ -34,6 +34,10 @@ public class RockNotifyReceiver : MonoBehaviour
                 {
                     bug.GetComponent<tentou_Move>().Escape(rock.transform.position, true);
                 }
+                if (bug.GetComponent<batta_Move>())
+                {
+                    bug.GetComponent<batta_Move>().Escape(rock.transform.position, true);
+                }
             }
             
         }

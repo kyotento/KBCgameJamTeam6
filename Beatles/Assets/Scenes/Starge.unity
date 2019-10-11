@@ -333,6 +333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 60
+  Clear: 0
 --- !u!1 &427975656 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 56df6971dda62b84f9cc4fc7193dfb7a,
@@ -1356,8 +1357,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: {x: 0, y: 0, z: 0}
+  move2: {x: 0, y: 0, z: 0}
   etimer: 0
+  pl_diff: {x: 0, y: 0, z: 0}
   escapeFlag: 0
+  player: {fileID: 0}
 --- !u!143 &1261836643
 CharacterController:
   m_ObjectHideFlags: 0
