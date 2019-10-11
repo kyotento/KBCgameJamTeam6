@@ -14,8 +14,9 @@ public class clear : MonoBehaviour
     [SerializeField] GameObject sippai;
     [SerializeField] AudioSource clearSe;       //成功音。
     [SerializeField] AudioSource sippaiSe;      //失敗音。
-    [SerializeField] AudioSource clearflag;     //成功。
-    [SerializeField] AudioSource sippaiflag;     //失敗。
+    [SerializeField] AudioSource stageSe;      //BGM。
+    [SerializeField] GameObject clearflag;     //成功。
+    [SerializeField] GameObject sippaiflag;     //失敗。
     // Start is called before the first frame update
     void Start()
     {
@@ -42,6 +43,7 @@ public class clear : MonoBehaviour
        
             sippai.GetComponent<RawImage>().enabled = true;
             sippaiSe.Play();            //失敗音流す。
+            stageSe.Stop();
             ReStart = true;
 
             cf = true;
@@ -50,10 +52,11 @@ public class clear : MonoBehaviour
 
         //成功条件。
         //虫が全員入った。
-        if( sef == true )
+        if( sef == true)
         {
             clea.GetComponent<RawImage>().enabled = true;
             clearSe.Play();         //成功流す。
+            stageSe.Stop();
             cf = true;
             ReStart = true;
         }
