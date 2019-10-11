@@ -38,27 +38,28 @@ public class clear : MonoBehaviour
 
         //失敗条件。
         //もし残り時間が０になった時または失敗フラグがたったとき。
-        if (timer < 1 || sif == true)
+        if (timer < 1 || sif)
         {
        
             sippai.GetComponent<RawImage>().enabled = true;
             sippaiSe.Play();            //失敗音流す。
             stageSe.Stop();
             ReStart = true;
+            ooo.GetComponent<Timer>().Clear = true;
 
             cf = true;
           
         }
 
         //成功条件。
-        //虫が全員入った。
-        if( sef == true)
+        if( sef == true )
         {
             clea.GetComponent<RawImage>().enabled = true;
             clearSe.Play();         //成功流す。
             stageSe.Stop();
             cf = true;
             ReStart = true;
+            ooo.GetComponent<Timer>().Clear = true;
         }
 
         //クリアか失敗した時。

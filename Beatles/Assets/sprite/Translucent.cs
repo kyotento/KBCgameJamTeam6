@@ -29,35 +29,36 @@ public class Translucent : MonoBehaviour
     void OnTriggerEnter(Collider col) 
     {        
 
-        //if(isGameClear || isGameOver) return;
-        Debug.Log("fuck");
+        if(isGameClear || isGameOver) return;
         if(col.gameObject.name == "tentou")
         {
             countPlusBug++;
-            isGameClear = true;
             Debug.Log("てんとう虫");
-            //col.gameObject.GetComponent<tentou_Move>().stopflag;
+
+            col.gameObject.GetComponent<tentou_Move>().stopflag = true;
         }
         if(col.gameObject.name == "ant")
         {
             isGameOver = true;
+            col.gameObject.GetComponent<ant_Move>().stopflag = true;
             Debug.Log("あり");
         }
         if(col.gameObject.name == "rolypolymodoli")
         {
-            countPlusBug++;   
-            isGameClear = true;
+            countPlusBug++;
+            col.gameObject.GetComponent<ant_Move>().stopflag = true;
             Debug.Log("ダンゴムシ");
         }
         if(col.gameObject.name == "bug1")
         {
             countPlusBug++;
-            isGameClear = true;
+            col.gameObject.GetComponent<batta_Move>().stopflag = true;
             Debug.Log("雲");
         }
         if(col.gameObject.name == "Sphere")
         {
             isGameOver = true;
+            col.gameObject.GetComponent<spider_Move>().stopflag = true;
             Debug.Log("バッタ");
         }
     }
