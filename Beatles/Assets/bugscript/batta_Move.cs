@@ -59,7 +59,7 @@ public class batta_Move : MonoBehaviour
         }
         diff = target[targetnum] - this.gameObject.transform.position+add;
         diff.Normalize();
-        charaCon.Move(diff/4.0f);
+        charaCon.Move(diff/100.0f);
 
     }
 }

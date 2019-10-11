@@ -27,11 +27,15 @@ public class RockNotifyReceiver : MonoBehaviour
             {
                 if(bug.GetComponent<ant_Move>())
                 {
-                    bug.GetComponent<ant_Move>().Escape(rock.transform.position,true); ;
+                    bug.GetComponent<ant_Move>().Escape(rock.transform.position,true); 
                 }
-
-               
+                //if(bug.GetComponent<spider_Move>().)
+                if (bug.GetComponent<tentou_Move>())
+                {
+                    bug.GetComponent<tentou_Move>().Escape(rock.transform.position, true);
+                }
             }
+            
         }
         //        
         //GetComponent<Rigidbody>().AddForce(0,10,0,ForceMode.Impulse);

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class spider_Move : MonoBehaviour
 {
+
     public  Vector3[] target = new Vector3[6];
     public Vector3 diff;
     public int i =0;
@@ -40,7 +41,7 @@ public class spider_Move : MonoBehaviour
        
         diff.Normalize();
 
-        charaCon.Move(diff/8.0f);
+        charaCon.Move(diff/80.0f);
         
 
     }
