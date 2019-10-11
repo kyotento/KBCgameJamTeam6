@@ -5,13 +5,21 @@ using UnityEngine;
 public class tentou_Move : MonoBehaviour
 {
     public Vector3 move = new Vector3();
+    public Vector3 move2 = new Vector3();
     Vector3 diff = new Vector3();
+    private float gravity = 9.80665f;
     int m_timer = 0;
     public int etimer = 0;
+    public Vector3 pl_diff;
+    
     public bool escapeFlag = false;
+    public GameObject player;
     // Start is called before the first frame update
     void Start()
     {
+        //if (player == null)
+        
+            player = GameObject.Find("Main Camera");
         
     }
     public void Escape(Vector3 pos, bool flag)
@@ -26,8 +34,34 @@ public class tentou_Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         CharacterController charaCon =
           gameObject.GetComponent<CharacterController>();
-        charaCon.Move(move);
+
+        if (escapeFlag == true)
+        {
+            etimer++;
+
+        }
+        if (etimer > 120.0f)
+        {
+            escapeFlag = false;
+            etimer = 0;
+
+        }
+        if (!charaCon.isGrounded)
+        {
+            move.y -= gravity * Time.deltaTime;
+        }
+        if (escapeFlag == false)
+        {
+
+            pl_diff = player.transform.position - this.transform.position;
+            pl_diff.y = 0.0f;
+            pl_diff.Normalize();
+            move2 = pl_diff / 100.0f;
+            charaCon.Move(move2);
+        }
+        else charaCon.Move(move);
     }
 }

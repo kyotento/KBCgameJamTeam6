@@ -288,6 +288,23 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< HEAD
+  m_GameObject: {fileID: 398075828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f08035d4afbf371489509938a9fa2236, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 60
+  Clear: 0
+--- !u!1 &427975656 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 56df6971dda62b84f9cc4fc7193dfb7a,
+    type: 3}
+  m_PrefabInstance: {fileID: 1512224183}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &427975660
+=======
   serializedVersion: 6
   m_Component:
   - component: {fileID: 80545778}
@@ -301,6 +318,7 @@ GameObject:
   m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!114 &80545776
+>>>>>>> 8387382ce5acff72eddcb06a7e6dfa03f0dd5eb5
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2782,8 +2800,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   move: {x: 0, y: 0, z: 0}
+  move2: {x: 0, y: 0, z: 0}
   etimer: 0
+  pl_diff: {x: 0, y: 0, z: 0}
   escapeFlag: 0
+  player: {fileID: 0}
 --- !u!143 &1261836643
 CharacterController:
   m_ObjectHideFlags: 0
